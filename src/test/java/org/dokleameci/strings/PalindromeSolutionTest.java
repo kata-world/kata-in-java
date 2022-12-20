@@ -13,7 +13,7 @@ class PalindromeSolutionTest {
     private PalindromeSolution underTest;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         underTest = new PalindromeSolution();
     }
 
@@ -28,11 +28,14 @@ class PalindromeSolutionTest {
 
     @Test
     void itShouldReturnFalseWhenIsPalindromeHasNoPalindromicInput() {
-        String input = "abcbaa";
+        String inputOne = "abcbaa";
+        String inputTwo = "absadfsadsadasdascba";
 
-        boolean actual = underTest.isPalindrome(input);
+        boolean actualOne = underTest.isPalindrome(inputOne);
+        boolean actualTwo = underTest.isPalindrome(inputTwo);
 
-        assertThat(actual).isFalse();
+        assertThat(actualOne).isFalse();
+        assertThat(actualTwo).isFalse();
     }
 
     @Test
@@ -46,14 +49,5 @@ class PalindromeSolutionTest {
 
         assertThat(actualOne).isTrue();
         assertThat(actualTwo).isTrue();
-    }
-
-    @Test
-    void itShouldReturnFalseWhenIsPalindromeHasNOPalindromicInput() {
-        String input = "absadfsadsadasdascba";
-
-        boolean actual = underTest.isPalindrome(input);
-
-        assertThat(actual).isFalse();
     }
 }
