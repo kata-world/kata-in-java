@@ -18,6 +18,15 @@ class PalindromeSolutionTest {
     }
 
     @Test
+    void itShouldReturnTrueWhenIsPalindromeHasEmptyStringInput() {
+        String input = "";
+
+        boolean actual = underTest.isPalindrome(input);
+
+        assertThat(actual).isTrue();
+    }
+
+    @Test
     void itShouldReturnTrueWhenIsPalindromeHasInputOfLengthOne() {
         String input = "b";
 
